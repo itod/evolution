@@ -1,0 +1,18 @@
+//
+//  BiomorphMac-Prefix.pch
+//  Evolution
+//
+//  Created by Todd Ditchendorf on 12/30/15.
+//  Copyright © 2015 Todd Ditchendorf. All rights reserved.
+//
+
+#if UNIT_TEST
+#define TDAssertMainThread() do {} while(0)
+#define TDAssertNotMainThread() do {} while(0)
+#else
+#define TDAssertMainThread() NSAssert1([NSThread isMainThread], @"%s should be called on the main thread only.", __PRETTY_FUNCTION__);
+#define TDAssertNotMainThread() NSAssert1(![NSThread isMainThread], @"%s should never be called on the main thread.", __PRETTY_FUNCTION__);
+#endif
+
+#define TDAssert(expr) NSAssert((expr), @"assertion failure in %s.", __PRETTY_FUNCTION__);
+#define TDCAssert(expr) NSCAssert((expr), @"assertion failure in %s.", __PRETTY_FUNCTION__);
