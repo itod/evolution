@@ -10,14 +10,5 @@
 
 @interface BioMorph : Morph
 
-@property (nonatomic, retain) NSArray *genes;
-@property (nonatomic, retain) NSArray *xOffsets;
-@property (nonatomic, retain) NSArray *yOffsets;
-
-@property (nonatomic, assign) CGFloat yOffset;
-
-@property (nonatomic, assign) CGFloat xMin;
-@property (nonatomic, assign) CGFloat xMax;
-@property (nonatomic, assign) CGFloat yMin;
-@property (nonatomic, assign) CGFloat yMax;
+@property (nonatomic, copy) NSArray *genes;
 @end

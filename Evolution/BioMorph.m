@@ -33,13 +33,26 @@
 
 #define GENE_MAX_INDEX 8
 
+@interface BioMorph ()
+@property (nonatomic, retain) NSArray *xOffsets;
+@property (nonatomic, retain) NSArray *yOffsets;
+
+@property (nonatomic, assign) CGFloat yOffset;
+
+@property (nonatomic, assign) CGFloat xMin;
+@property (nonatomic, assign) CGFloat xMax;
+@property (nonatomic, assign) CGFloat yMin;
+@property (nonatomic, assign) CGFloat yMax;
+@end
+
 @implementation BioMorph
 
 - (instancetype)init {
     self = [super init];
     if (self) {
         self.propertyNames = @[@"", @""];
-        self.genes = @[ @1, @(-2), @3, @4, @(-5), @1, @(-2), @(-3), @8 ];
+        //self.genes = @[ @1, @(-2), @3, @4, @(-5), @1, @(-2), @(-3), @8 ]; // bug
+        self.genes = @[ @(-2), @(-6), @(-1), @2, @(-5), @(-5), @(-1), @(-3), @7 ]; // antlers
         
         self.xMin = CGFLOAT_MAX;
         self.yMin = CGFLOAT_MAX;
@@ -151,6 +164,17 @@
         self.yOffsets = @[ self.genes[5], self.genes[4], self.genes[3], self.genes[4], self.genes[5], self.genes[6], self.genes[7], self.genes[6] ];
     }
     return _yOffsets;
+}
+
+
+- (void)setGenes:(NSArray *)genes {
+    if (_genes != genes) {
+        [_genes autorelease];
+        _genes = [genes copy];
+        
+        self.xOffsets = nil;
+        self.yOffsets = nil;
+    }
 }
 
 @end
