@@ -7,6 +7,7 @@
 //
 
 #import "EvolutionRenderer.h"
+#import "BioMorph.h"
 
 #define NUM_ROWS 3
 #define NUM_COLS 3
@@ -69,6 +70,12 @@
             CGContextStrokePath(ctx);
         }
     }
+    
+    Morph *m = [[[BioMorph alloc] init] autorelease];
+    
+    CGContextSaveGState(ctx); {
+        [m renderInContext:ctx rect:CGRectMake(NSMidX(bounds)-w*0.5, NSMidY(bounds)-h*0.5, w, h)];
+    } CGContextRestoreGState(ctx);
 }
 
 
