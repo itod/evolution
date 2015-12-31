@@ -16,21 +16,6 @@
 //                [ 'Medusa', [ -4, 2, 1, 3, -7, -3, -1, 8, 7 ] ],
 //                ];
 
-
-//tree: function( x1, y1, depth, geneIndex ) {
-//    
-//    var x2 = x1 + depth * this.getXOffsets()[ geneIndex ];
-//    var y2 = y1 + depth * this.getYOffsets()[ geneIndex ];
-//    
-//    this.renderLine( x1, y1, x2, y2 );
-//    this.trackDimensions( x1, y1, x2, y2 );
-//    
-//    if ( depth > 0 ) {
-//        this.tree( x2, y2, depth - 1, ( geneIndex + ( GENE_MAX_INDEX - 1) ) % GENE_MAX_INDEX );
-//        this.tree( x2, y2, depth - 1, ( geneIndex + 1 ) % GENE_MAX_INDEX );
-//    }
-//},
-
 #define GENE_MAX_INDEX 8
 
 @interface BioMorph ()
