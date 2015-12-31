@@ -39,7 +39,7 @@
     self = [super init];
     if (self) {
         self.propertyNames = @[@"", @""];
-        self.genes = [[@[ @1, @(-2), @3, @4, @(-5), @1, @(-2), @(-3), @8 ] mutableCopy] autorelease];
+        self.genes = @[ @1, @(-2), @3, @4, @(-5), @1, @(-2), @(-3), @8 ];
         
         self.xMin = CGFLOAT_MAX;
         self.yMin = CGFLOAT_MAX;
@@ -139,12 +139,18 @@
 
 
 - (NSArray *)xOffsets {
-    return @[ @(-[self.genes[1] integerValue]), @(-[self.genes[0] integerValue]), @0, self.genes[0], self.genes[1], self.genes[2], @0, @(-[self.genes[2] integerValue]) ];
+    if (!_xOffsets) {
+        self.xOffsets = @[ @(-[self.genes[1] integerValue]), @(-[self.genes[0] integerValue]), @0, self.genes[0], self.genes[1], self.genes[2], @0, @(-[self.genes[2] integerValue]) ];
+    }
+    return _xOffsets;
 }
 
 
 - (NSArray *)yOffsets {
-    return @[ self.genes[5], self.genes[4], self.genes[3], self.genes[4], self.genes[5], self.genes[6], self.genes[7], self.genes[6] ];
+    if (!_yOffsets) {
+        self.yOffsets = @[ self.genes[5], self.genes[4], self.genes[3], self.genes[4], self.genes[5], self.genes[6], self.genes[7], self.genes[6] ];
+    }
+    return _yOffsets;
 }
 
 @end
