@@ -60,14 +60,14 @@
 
 - (void)renderInContext:(CGContextRef)ctx rect:(CGRect)r {
     CGPoint p = CGPointMake(NSMidX(r), NSMidY(r));
-    [self tree:ctx atLocation:p depth:[self.genes[GENE_MAX_INDEX] integerValue] geneIndex:2];
+    [self tree:ctx location:p depth:[self.genes[GENE_MAX_INDEX] integerValue] geneIndex:2];
 }
 
 
 #pragma mark -
 #pragma mark Private
 
-- (void)tree:(CGContextRef)ctx atLocation:(CGPoint)p1 depth:(NSInteger)depth geneIndex:(NSInteger)geneIdx {
+- (void)tree:(CGContextRef)ctx location:(CGPoint)p1 depth:(NSInteger)depth geneIndex:(NSInteger)geneIdx {
     CGFloat x2 = p1.x + depth * [self.xOffsets[geneIdx] integerValue];
     CGFloat y2 = p1.y + depth * [self.yOffsets[geneIdx] integerValue];
     
@@ -77,8 +77,8 @@
     [self trackDimensionsFrom:p1 to:p2];
 
     if (depth > 0) {
-        [self tree:ctx atLocation:p2 depth:depth-1 geneIndex:(geneIdx + (GENE_MAX_INDEX-1)) % GENE_MAX_INDEX];
-        [self tree:ctx atLocation:p2 depth:depth-1 geneIndex:(geneIdx+1) % GENE_MAX_INDEX];
+        [self tree:ctx location:p2 depth:depth-1 geneIndex:(geneIdx + (GENE_MAX_INDEX-1)) % GENE_MAX_INDEX];
+        [self tree:ctx location:p2 depth:depth-1 geneIndex:(geneIdx+1) % GENE_MAX_INDEX];
     }
 }
 
@@ -93,48 +93,48 @@
 
 
 - (void)trackDimensionsFrom:(CGPoint)p1 to:(CGPoint)p2 {
-    if (p1.x < self.xMin) {
+    if (p1.x < _xMin) {
         self.xMin = p1.x;
     }
     
-    if (p2.x < self.xMin) {
+    if (p2.x < _xMin) {
         self.xMin = p2.x;
     }
     
-    if (p1.x > self.xMax) {
+    if (p1.x > _xMax) {
         self.xMax = p1.x;
     }
     
-    if (p2.x > self.xMax) {
+    if (p2.x > _xMax) {
         self.xMax = p2.x;
     }
     
-    if (p1.y < self.yMin) {
+    if (p1.y < _yMin) {
         self.yMin = p1.y;
     }
     
-    if (p2.y < self.yMin) {
+    if (p2.y < _yMin) {
         self.yMin = p2.y;
     }
     
-    if (p1.y > self.yMax) {
+    if (p1.y > _yMax) {
         self.yMax = p1.y;
     }
     
-    if (p2.y > self.yMax) {
+    if (p2.y > _yMax) {
         self.yMax = p2.y;
     }
 }
 
 
 - (CGFloat)centerY {
-    return (self.yMax + self.yMin) * 0.5;
+    return (_yMax + _yMin) * 0.5;
 }
 
 
 - (NSArray *)xOffsets {
     if (!_xOffsets) {
-        self.xOffsets = @[ @(-[self.genes[1] integerValue]), @(-[self.genes[0] integerValue]), @0, self.genes[0], self.genes[1], self.genes[2], @0, @(-[self.genes[2] integerValue]) ];
+        self.xOffsets = @[ @(-[_genes[1] integerValue]), @(-[_genes[0] integerValue]), @0, _genes[0], _genes[1], _genes[2], @0, @(-[_genes[2] integerValue]) ];
     }
     return _xOffsets;
 }
@@ -142,7 +142,7 @@
 
 - (NSArray *)yOffsets {
     if (!_yOffsets) {
-        self.yOffsets = @[ self.genes[5], self.genes[4], self.genes[3], self.genes[4], self.genes[5], self.genes[6], self.genes[7], self.genes[6] ];
+        self.yOffsets = @[ _genes[5], _genes[4], _genes[3], _genes[4], _genes[5], _genes[6], _genes[7], _genes[6] ];
     }
     return _yOffsets;
 }
