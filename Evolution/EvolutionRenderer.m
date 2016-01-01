@@ -15,6 +15,7 @@
 #define CHILD_COUNT 8
 
 #define DEFAULT_EXTENT 200.0
+#define MARGIN 100.0
 
 @implementation EvolutionRenderer
 
@@ -89,24 +90,28 @@
     // draw morphs
     CGContextSaveGState(ctx); {
         // scale
-        CGFloat sx = w / DEFAULT_EXTENT;
-        CGFloat sy = h / DEFAULT_EXTENT;
+        CGFloat sx = w / (DEFAULT_EXTENT + MARGIN*2.0);
+        CGFloat sy = h / (DEFAULT_EXTENT + MARGIN*2.0);
         //NSLog(@"%@,%@", @(sx), @(sy));
         CGContextScaleCTM(ctx, sx, sy);
 
         TDAssert([_children count] == NUM_ROWS*NUM_COLS);
         
         NSUInteger idx = 0;
+        CGFloat marginY = 0.0;
         for (NSInteger col = 0; col < NUM_ROWS; ++col) {
+            CGFloat marginX = 0.0;
             for (NSInteger row = 0; row < NUM_COLS; ++row) {
                 
                 CGContextSaveGState(ctx); {
                     TDAssert(idx < [_children count]);
                     Morph *m = _children[idx++];
-                    [m renderInContext:ctx rect:CGRectMake(round(DEFAULT_EXTENT*row), round(DEFAULT_EXTENT*col), DEFAULT_EXTENT, DEFAULT_EXTENT)];
+                    [m renderInContext:ctx rect:CGRectMake(round((DEFAULT_EXTENT*row)+marginX+MARGIN), round((DEFAULT_EXTENT*col)+marginY+MARGIN), DEFAULT_EXTENT, DEFAULT_EXTENT)];
                 } CGContextRestoreGState(ctx);
 
+                marginX += MARGIN*2.0;
             }
+            marginY += MARGIN*2.0;
         }
     } CGContextRestoreGState(ctx);
 }
