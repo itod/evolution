@@ -15,7 +15,7 @@
 #define CHILD_COUNT 8
 
 #define DEFAULT_EXTENT 200.0
-#define MARGIN 20.0
+#define MARGIN 0.0
 
 @implementation EvolutionRenderer
 

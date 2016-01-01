@@ -53,8 +53,8 @@ static NSInteger EVORandom(low, high) {
     self = [super init];
     if (self) {
         self.propertyNames = @[@"", @""];
-        //self.genes = @[ @1, @(-2), @3, @4, @(-5), @1, @(-2), @(-3), @8 ]; // bug
-        self.genes = [[@[ @(-2), @(-6), @(-1), @2, @(-5), @(-5), @(-1), @(-3), @7 ] mutableCopy] autorelease]; // antlers
+        self.genes = @[ @1, @(-2), @3, @4, @(-5), @1, @(-2), @(-3), @8 ]; // bug
+        //self.genes = @[ @(-2), @(-6), @(-1), @2, @(-5), @(-5), @(-1), @(-3), @7 ]; // antlers
         
         self.xMin = CGFLOAT_MAX;
         self.yMin = CGFLOAT_MAX;
@@ -109,7 +109,7 @@ static NSInteger EVORandom(low, high) {
 
 - (void)renderInContext:(CGContextRef)ctx rect:(CGRect)r {
     TDAssertMainThread();
-    CGPoint p = CGPointMake(NSMidX(r), NSMaxY(r));
+    CGPoint p = CGPointMake(NSMidX(r), NSMidY(r));
     [self tree:ctx location:p depth:[self.genes[GENE_MAX_INDEX] integerValue] geneIndex:2];
 }
 
