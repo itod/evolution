@@ -79,17 +79,17 @@
 
 - (NSArray *)reproduce:(NSUInteger)count {
     TDAssertMainThread();
-    NSMutableArray *v = [NSMutableArray arrayWithCapacity:count];
+    NSMutableArray *v = [NSMutableArray arrayWithCapacity:count+1];
     
     NSUInteger half = round(count * 0.5);
     for (NSUInteger i = 0; i < count; ++i) {
-        Morph *m = [self mutate];
-        TDAssert(m);
-        [v addObject:m];
-
         if (half == i) {
             [v addObject:self];
         }
+
+        Morph *m = [self mutate];
+        TDAssert(m);
+        [v addObject:m];
     }
     
     TDAssert(count+1 == [v count]);

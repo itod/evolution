@@ -14,6 +14,9 @@
 
 #define CHILD_COUNT 8
 
+#define DEFAULT_EXTENT 200.0
+#define MARGIN 20.0
+
 @implementation EvolutionRenderer
 
 - (instancetype)init {
@@ -27,7 +30,6 @@
 
 - (void)dealloc {
     self.delegate = nil;
-    self.parent = nil;
     self.children = nil;
     [super dealloc];
 }
@@ -102,7 +104,7 @@
                 CGContextSaveGState(ctx); {
                     TDAssert(idx < [_children count]);
                     Morph *m = _children[idx++];
-                    [m renderInContext:ctx rect:CGRectMake(DEFAULT_EXTENT*row, DEFAULT_EXTENT*col, DEFAULT_EXTENT, DEFAULT_EXTENT)];
+                    [m renderInContext:ctx rect:CGRectMake(round(DEFAULT_EXTENT*row + MARGIN*0.5), round(DEFAULT_EXTENT*col - MARGIN*0.5), DEFAULT_EXTENT - MARGIN, DEFAULT_EXTENT - MARGIN)];
                 } CGContextRestoreGState(ctx);
 
             }
@@ -155,10 +157,11 @@
     TDAssertMainThread();
     TDAssert(m);
     
-    self.parent = m;
     self.children = [m reproduce:CHILD_COUNT];
     TDAssert([_children count] == CHILD_COUNT+1);
     TDAssert([_children count] == NUM_ROWS*NUM_COLS);
+    
+    TDAssert(m == _children[4]);
 
     TDAssert(_delegate);
     [_delegate rendererDidReproduce:self];

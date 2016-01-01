@@ -20,13 +20,14 @@
 #define GENE_MUTATION_DELTA 2
 
 static BOOL EVOIsGeneValueInRange(NSUInteger geneIndex, NSInteger geneValue) {
-    static NSInteger GENE_RANGE_DIMENSION[2] = {-9, 9};
-    static NSInteger GENE_RANGE_DEPTH[2] = {3, 9};
+    //static NSInteger sGeneRangeDimension[2] = {-9, 9};
+    static NSInteger sGeneRangeDimension[2] = {-5, 5};
+    static NSInteger sGeneRangeDepth[2] = {3, 9};
     
     if (geneIndex < GENE_MAX_INDEX ) {
-        return geneValue >= GENE_RANGE_DIMENSION[0] && geneValue <= GENE_RANGE_DIMENSION[1];
+        return geneValue >= sGeneRangeDimension[0] && geneValue <= sGeneRangeDimension[1];
     } else if (GENE_MAX_INDEX == geneIndex) {
-        return geneValue >= GENE_RANGE_DEPTH[0] && geneValue <= GENE_RANGE_DEPTH[1];
+        return geneValue >= sGeneRangeDepth[0] && geneValue <= sGeneRangeDepth[1];
     } else {
         return NO;
     }
@@ -107,7 +108,7 @@ static NSInteger EVORandom(low, high) {
 
 - (void)renderInContext:(CGContextRef)ctx rect:(CGRect)r {
     TDAssertMainThread();
-    CGPoint p = CGPointMake(NSMidX(r), NSMidY(r));
+    CGPoint p = CGPointMake(NSMidX(r), NSMaxY(r));
     [self tree:ctx location:p depth:[self.genes[GENE_MAX_INDEX] integerValue] geneIndex:2];
 }
 

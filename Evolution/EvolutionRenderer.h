@@ -24,6 +24,5 @@
 
 @property (nonatomic, assign) IBOutlet id <EvolutionRendererDelegate>delegate;
 
-@property (nonatomic, retain) Morph *parent;
 @property (nonatomic, retain) NSArray *children;
 @end
