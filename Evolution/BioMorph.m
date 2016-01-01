@@ -20,8 +20,7 @@
 #define GENE_MUTATION_DELTA 2
 
 static BOOL EVOIsGeneValueInRange(NSUInteger geneIndex, NSInteger geneValue) {
-    //static NSInteger sGeneRangeDimension[2] = {-9, 9};
-    static NSInteger sGeneRangeDimension[2] = {-5, 5};
+    static NSInteger sGeneRangeDimension[2] = {-9, 9};
     static NSInteger sGeneRangeDepth[2] = {3, 9};
     
     if (geneIndex < GENE_MAX_INDEX ) {
@@ -102,7 +101,9 @@ static NSInteger EVORandom(low, high) {
         
     } while (!EVOIsGeneValueInRange(geneIndex, newValue));
     
-    _genes[geneIndex] = @(newValue);
+    NSMutableArray *genes = [[_genes mutableCopy] autorelease];
+    genes[geneIndex] = @(newValue);
+    self.genes = genes;
 }
 
 
@@ -200,7 +201,7 @@ static NSInteger EVORandom(low, high) {
 - (void)setGenes:(NSArray *)genes {
     if (_genes != genes) {
         [_genes autorelease];
-        _genes = [genes mutableCopy];
+        _genes = [genes copy];
         
         self.xOffsets = nil;
         self.yOffsets = nil;

@@ -98,8 +98,8 @@
         TDAssert([_children count] == NUM_ROWS*NUM_COLS);
         
         NSUInteger idx = 0;
-        for (NSInteger row = 0; row < NUM_ROWS; ++row) {
-            for (NSInteger col = 0; col < NUM_COLS; ++col) {
+        for (NSInteger col = 0; col < NUM_ROWS; ++col) {
+            for (NSInteger row = 0; row < NUM_COLS; ++row) {
                 
                 CGContextSaveGState(ctx); {
                     TDAssert(idx < [_children count]);
@@ -142,13 +142,13 @@
         }
     }
     
-    NSInteger idx = col*3.0 + row;
+    NSInteger idx = lrint(col*3.0 + row);
     TDAssert(idx < [_children count]);
 
-    //NSLog(@"%@,%@ : %@", @(row), @(col), @(idx));
+    NSLog(@"%@,%@ : %@", @(row), @(col), @(idx));
 
-    Morph *m = _children[idx];
-    
+    Morph *m = [[_children[idx] retain] autorelease];
+
     [self reproduce:m];
 }
 
@@ -162,7 +162,7 @@
     TDAssert([_children count] == NUM_ROWS*NUM_COLS);
     
     TDAssert(m == _children[4]);
-
+    
     TDAssert(_delegate);
     [_delegate rendererDidReproduce:self];
 }
