@@ -22,8 +22,6 @@
 @property (nonatomic, retain) NSArray *xOffsets;
 @property (nonatomic, retain) NSArray *yOffsets;
 
-@property (nonatomic, assign) CGFloat yOffset;
-
 @property (nonatomic, assign) CGFloat xMin;
 @property (nonatomic, assign) CGFloat xMax;
 @property (nonatomic, assign) CGFloat yMin;
@@ -36,8 +34,8 @@
     self = [super init];
     if (self) {
         self.propertyNames = @[@"", @""];
-        //self.genes = @[ @1, @(-2), @3, @4, @(-5), @1, @(-2), @(-3), @8 ]; // bug
-        self.genes = @[ @(-2), @(-6), @(-1), @2, @(-5), @(-5), @(-1), @(-3), @7 ]; // antlers
+        self.genes = @[ @1, @(-2), @3, @4, @(-5), @1, @(-2), @(-3), @8 ]; // bug
+        //self.genes = @[ @(-2), @(-6), @(-1), @2, @(-5), @(-5), @(-1), @(-3), @7 ]; // antlers
         
         self.xMin = CGFLOAT_MAX;
         self.yMin = CGFLOAT_MAX;
@@ -61,10 +59,8 @@
 #pragma mark Genome
 
 - (void)renderInContext:(CGContextRef)ctx rect:(CGRect)r {
-    self.yOffset = NSHeight(r)*0.5 - NSMidY(r);
     CGPoint p = CGPointMake(NSMidX(r), NSMidY(r));
     [self tree:ctx atLocation:p depth:[self.genes[GENE_MAX_INDEX] integerValue] geneIndex:2];
-
 }
 
 
@@ -90,8 +86,8 @@
 - (void)renderLine:(CGContextRef)ctx from:(CGPoint)p1 to:(CGPoint)p2 {
     CGContextSetLineWidth(ctx, 1.0);
     CGContextSetRGBStrokeColor(ctx, 0.0, 0.0, 0.0, 1.0);
-    CGContextMoveToPoint(ctx, p1.x, p1.y + self.yOffset);
-    CGContextAddLineToPoint(ctx, p2.x, p2.y + self.yOffset);
+    CGContextMoveToPoint(ctx, p1.x, p1.y);
+    CGContextAddLineToPoint(ctx, p2.x, p2.y);
     CGContextStrokePath(ctx);
 }
 

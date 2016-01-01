@@ -70,11 +70,25 @@
             CGContextStrokePath(ctx);
         }
     }
-    
-    Morph *m = [[[BioMorph alloc] init] autorelease];
-    
+
+    // draw morphs
     CGContextSaveGState(ctx); {
-        [m renderInContext:ctx rect:CGRectMake(NSMidX(bounds)-w*0.5, NSMidY(bounds)-h*0.5, w, h)];
+        // scale
+        CGFloat sx = w / DEFAULT_EXTENT;
+        CGFloat sy = h / DEFAULT_EXTENT;
+        //NSLog(@"%@,%@", @(sx), @(sy));
+        CGContextScaleCTM(ctx, sx, sy);
+
+        for (NSInteger row = 0; row < NUM_ROWS; ++row) {
+            for (NSInteger col = 0; col < NUM_COLS; ++col) {
+                
+                CGContextSaveGState(ctx); {
+                    Morph *m = [[[BioMorph alloc] init] autorelease];
+                    [m renderInContext:ctx rect:CGRectMake(DEFAULT_EXTENT*row, DEFAULT_EXTENT*col, DEFAULT_EXTENT, DEFAULT_EXTENT)];
+                } CGContextRestoreGState(ctx);
+
+            }
+        }
     } CGContextRestoreGState(ctx);
 }
 
