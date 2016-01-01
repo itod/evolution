@@ -75,7 +75,33 @@
 
 
 #pragma mark -
-#pragma mark Genome
+#pragma mark Morph
+
+- (NSArray *)reproduce:(NSUInteger)count {
+    TDAssertMainThread();
+    NSMutableArray *v = [NSMutableArray arrayWithCapacity:count];
+    
+    NSUInteger half = round(count * 0.5);
+    for (NSUInteger i = 0; i < count; ++i) {
+        Morph *m = [self mutate];
+        TDAssert(m);
+        [v addObject:m];
+
+        if (half == i) {
+            [v addObject:self];
+        }
+    }
+    
+    TDAssert(count+1 == [v count]);
+    return v;
+}
+
+
+- (Morph *)mutate {
+    NSAssert2(0, @"%s is an abstract method and must be implemented in %@", __PRETTY_FUNCTION__, [self class]);
+    return nil;
+}
+
 
 - (void)renderInContext:(CGContextRef)ctx rect:(CGRect)r {
     NSAssert2(0, @"%s is an abstract method and must be implemented in %@", __PRETTY_FUNCTION__, [self class]);

@@ -8,12 +8,22 @@
 
 #import <Cocoa/Cocoa.h>
 
-@protocol EvolutionRendererDelegate;
+@class Morph;
+@class EvolutionRenderer;
+
+@protocol EvolutionRendererDelegate <NSObject>
+- (void)rendererDidReproduce:(EvolutionRenderer *)r;
+@end
 
 @interface EvolutionRenderer : NSObject
 
-- (void)renderInView:(id)v;
+- (void)renderInView:(id)v dirtyRect:(CGRect)drect;
 - (void)hitTest:(CGPoint)p inView:(id)v;
 
+- (void)reproduce:(Morph *)m;
+
 @property (nonatomic, assign) IBOutlet id <EvolutionRendererDelegate>delegate;
+
+@property (nonatomic, retain) Morph *parent;
+@property (nonatomic, retain) NSArray *children;
 @end

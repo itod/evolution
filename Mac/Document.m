@@ -7,6 +7,10 @@
 //
 
 #import "Document.h"
+//#import "EvolutionView.h"
+//#import "EvolutionRenderer.h"
+//
+//#define EVO_VIEW_TAG 47
 
 @interface Document ()
 
@@ -22,9 +26,12 @@
     return self;
 }
 
-- (void)windowControllerDidLoadNib:(NSWindowController *)aController {
-    [super windowControllerDidLoadNib:aController];
-    // Add any code here that needs to be executed once the windowController has loaded the document's window.
+- (void)windowControllerDidLoadNib:(NSWindowController *)wc {
+    [super windowControllerDidLoadNib:wc];
+
+//    EvolutionView *v = [[[wc window] contentView] viewWithTag:EVO_VIEW_TAG];
+//    EvolutionRenderer *r = v.renderer;
+//    [r reproduce:m];
 }
 
 + (BOOL)autosavesInPlace {

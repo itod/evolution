@@ -20,12 +20,10 @@
 
 
 - (void)drawRect:(NSRect)dirtyRect {
-    [super drawRect:dirtyRect];
-    
     TDAssertMainThread();
     TDAssert(_renderer);
     
-    [_renderer renderInView:self];
+    [_renderer renderInView:self dirtyRect:dirtyRect];
 }
 
 
@@ -38,6 +36,16 @@
     
     CGPoint p = [self convertPoint:[evt locationInWindow] fromView:nil];
     [_renderer hitTest:p inView:self];
+}
+
+
+#pragma mark -
+#pragma mark EvolutionRendererDelegate
+
+- (void)rendererDidReproduce:(EvolutionRenderer *)r {
+    TDAssertMainThread();
+    
+    
 }
 
 @end

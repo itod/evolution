@@ -17,6 +17,25 @@
 //                ];
 
 #define GENE_MAX_INDEX 8
+#define GENE_MUTATION_DELTA 2
+
+static BOOL EVOIsGeneValueInRange(NSUInteger geneIndex, NSInteger geneValue) {
+    static NSInteger GENE_RANGE_DIMENSION[2] = {-9, 9};
+    static NSInteger GENE_RANGE_DEPTH[2] = {3, 9};
+    
+    if (geneIndex < GENE_MAX_INDEX ) {
+        return geneValue >= GENE_RANGE_DIMENSION[0] && geneValue <= GENE_RANGE_DIMENSION[1];
+    } else if (GENE_MAX_INDEX == geneIndex) {
+        return geneValue >= GENE_RANGE_DEPTH[0] && geneValue <= GENE_RANGE_DEPTH[1];
+    } else {
+        return NO;
+    }
+}
+
+static NSInteger EVORandom(low, high) {
+    double r = (double)rand() / (double)RAND_MAX;
+    return low + floor(r * (high - low));
+}
 
 @interface BioMorph ()
 @property (nonatomic, retain) NSArray *xOffsets;
@@ -34,8 +53,8 @@
     self = [super init];
     if (self) {
         self.propertyNames = @[@"", @""];
-        self.genes = @[ @1, @(-2), @3, @4, @(-5), @1, @(-2), @(-3), @8 ]; // bug
-        //self.genes = @[ @(-2), @(-6), @(-1), @2, @(-5), @(-5), @(-1), @(-3), @7 ]; // antlers
+        //self.genes = @[ @1, @(-2), @3, @4, @(-5), @1, @(-2), @(-3), @8 ]; // bug
+        self.genes = [[@[ @(-2), @(-6), @(-1), @2, @(-5), @(-5), @(-1), @(-3), @7 ] mutableCopy] autorelease]; // antlers
         
         self.xMin = CGFLOAT_MAX;
         self.yMin = CGFLOAT_MAX;
@@ -56,9 +75,38 @@
 
 
 #pragma mark -
-#pragma mark Genome
+#pragma mark Morph
+
+- (Morph *)mutate {
+    BioMorph *bm = [[[BioMorph alloc] init] autorelease];
+    bm.genes = self.genes;
+    [bm mutateGene];
+    return bm;
+}
+
+
+- (void)mutateGene {
+    NSUInteger geneIndex = 0;
+    NSInteger newValue = 0;
+
+    do {
+        // Ensure a small change the genes
+        NSInteger mutationOffset = 0;
+        do {
+            mutationOffset = EVORandom(-GENE_MUTATION_DELTA, GENE_MUTATION_DELTA);
+        } while (0 == mutationOffset);
+        
+        geneIndex = EVORandom(0, GENE_MAX_INDEX);
+        newValue = [_genes[geneIndex] integerValue] + mutationOffset;
+        
+    } while (!EVOIsGeneValueInRange(geneIndex, newValue));
+    
+    _genes[geneIndex] = @(newValue);
+}
+
 
 - (void)renderInContext:(CGContextRef)ctx rect:(CGRect)r {
+    TDAssertMainThread();
     CGPoint p = CGPointMake(NSMidX(r), NSMidY(r));
     [self tree:ctx location:p depth:[self.genes[GENE_MAX_INDEX] integerValue] geneIndex:2];
 }
@@ -151,7 +199,7 @@
 - (void)setGenes:(NSArray *)genes {
     if (_genes != genes) {
         [_genes autorelease];
-        _genes = [genes copy];
+        _genes = [genes mutableCopy];
         
         self.xOffsets = nil;
         self.yOffsets = nil;

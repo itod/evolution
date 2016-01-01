@@ -10,6 +10,8 @@
 
 @interface Morph : NSObject <Serializable>
 
+- (NSArray *)reproduce:(NSUInteger)count;
+
 - (void)renderInContext:(CGContextRef)ctx rect:(CGRect)r;
 
 @property (nonatomic, retain) NSArray *propertyNames;

@@ -6,14 +6,9 @@
 //  Copyright © 2015 Todd Ditchendorf. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+#import "EvolutionRenderer.h"
 
-@class EvolutionRenderer;
 @class EvolutionView;
-
-@protocol EvolutionRendererDelegate <NSObject>
-
-@end
 
 @interface EvolutionView : NSView <EvolutionRendererDelegate>
 

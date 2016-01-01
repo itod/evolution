@@ -12,6 +12,8 @@
 #define NUM_ROWS 3
 #define NUM_COLS 3
 
+#define CHILD_COUNT 8
+
 @implementation EvolutionRenderer
 
 - (instancetype)init {
@@ -25,14 +27,24 @@
 
 - (void)dealloc {
     self.delegate = nil;
+    self.parent = nil;
+    self.children = nil;
     [super dealloc];
+}
+
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    Morph *m = [[[BioMorph alloc] init] autorelease];
+    [self reproduce:m];
 }
 
 
 #pragma mark -
 #pragma mark Public
 
-- (void)renderInView:(id)v {
+- (void)renderInView:(id)v dirtyRect:(CGRect)drect {
     TDAssertMainThread();
     TDAssert(v);
     
@@ -70,6 +82,8 @@
             CGContextStrokePath(ctx);
         }
     }
+    
+    if (![_children count]) return;
 
     // draw morphs
     CGContextSaveGState(ctx); {
@@ -79,11 +93,15 @@
         //NSLog(@"%@,%@", @(sx), @(sy));
         CGContextScaleCTM(ctx, sx, sy);
 
+        TDAssert([_children count] == NUM_ROWS*NUM_COLS);
+        
+        NSUInteger idx = 0;
         for (NSInteger row = 0; row < NUM_ROWS; ++row) {
             for (NSInteger col = 0; col < NUM_COLS; ++col) {
                 
                 CGContextSaveGState(ctx); {
-                    Morph *m = [[[BioMorph alloc] init] autorelease];
+                    TDAssert(idx < [_children count]);
+                    Morph *m = _children[idx++];
                     [m renderInContext:ctx rect:CGRectMake(DEFAULT_EXTENT*row, DEFAULT_EXTENT*col, DEFAULT_EXTENT, DEFAULT_EXTENT)];
                 } CGContextRestoreGState(ctx);
 
@@ -126,6 +144,20 @@
     
     TDAssert(_delegate);
     //[_delegate clickedRow:row column:col];
+}
+
+
+- (void)reproduce:(Morph *)m {
+    TDAssertMainThread();
+    TDAssert(m);
+    
+    self.parent = m;
+    self.children = [m reproduce:CHILD_COUNT];
+    TDAssert([_children count] == CHILD_COUNT+1);
+    TDAssert([_children count] == NUM_ROWS*NUM_COLS);
+
+    TDAssert(_delegate);
+    [_delegate rendererDidReproduce:self];
 }
 
 @end
