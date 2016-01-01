@@ -45,7 +45,7 @@
 - (void)rendererDidReproduce:(EvolutionRenderer *)r {
     TDAssertMainThread();
     
-    
+    [self setNeedsDisplay:YES];
 }
 
 @end

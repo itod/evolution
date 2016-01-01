@@ -140,10 +140,14 @@
         }
     }
     
-    NSLog(@"%@,%@", @(row), @(col));
+    NSInteger idx = col*3.0 + row;
+    TDAssert(idx < [_children count]);
+
+    //NSLog(@"%@,%@ : %@", @(row), @(col), @(idx));
+
+    Morph *m = _children[idx];
     
-    TDAssert(_delegate);
-    //[_delegate clickedRow:row column:col];
+    [self reproduce:m];
 }
 
 
