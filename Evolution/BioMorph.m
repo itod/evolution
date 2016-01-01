@@ -8,14 +8,6 @@
 
 #import "BioMorph.h"
 
-//var EXAMPLES = [
-//                [ 'Bug', [ 1, -2, 3, 4, -5, 1, -2, -3, 8 ] ],
-//                [ 'Antlers', [ -2, -6, -1, 2, -5, -5, -1, -3, 7] ],
-//                [ 'Spaceship', [ -2, 9, -3, 4, 4, 7, 2, 0, 6 ] ],
-//                [ 'Frog', [ -4, 1, 4, 1, 4, 9, -9, 5, 6 ] ],
-//                [ 'Medusa', [ -4, 2, 1, 3, -7, -3, -1, 8, 7 ] ],
-//                ];
-
 #define GENE_MAX_INDEX 8
 #define GENE_MUTATION_DELTA 2
 
@@ -53,8 +45,12 @@ static NSInteger EVORandom(low, high) {
     self = [super init];
     if (self) {
         self.propertyNames = @[@"", @""];
-        self.genes = @[ @1, @(-2), @3, @4, @(-5), @1, @(-2), @(-3), @8 ]; // bug
-        //self.genes = @[ @(-2), @(-6), @(-1), @2, @(-5), @(-5), @(-1), @(-3), @7 ]; // antlers
+        
+//        self.genes = @[@(1), @(-2), @(3), @(4), @(-5), @(1), @(-2), @(-3), @(8)]; // Bug
+//        self.genes = @[@(-2), @(-6), @(-1), @(2), @(-5), @(-5), @(-1), @(-3), @(7)]; // Antlers
+        self.genes = @[@(-2), @(9), @(-3), @(4), @(4), @(7), @(2), @(0), @(6)]; // Spaceship
+//        self.genes = @[@(-4), @(1), @(4), @(1), @(4), @(9), @(-9), @(5), @(6)]; // Frog
+//        self.genes = @[@(-4), @(2), @(1), @(3), @(-7), @(-3), @(-1), @(8), @(7)]; // Medusa
         
         self.xMin = CGFLOAT_MAX;
         self.yMin = CGFLOAT_MAX;
