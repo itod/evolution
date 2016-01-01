@@ -84,7 +84,7 @@
 
 
 - (void)renderLine:(CGContextRef)ctx from:(CGPoint)p1 to:(CGPoint)p2 {
-    CGContextSetLineWidth(ctx, 1.0);
+    CGContextSetLineWidth(ctx, 0.5);
     CGContextSetRGBStrokeColor(ctx, 0.0, 0.0, 0.0, 1.0);
     CGContextMoveToPoint(ctx, p1.x, p1.y);
     CGContextAddLineToPoint(ctx, p2.x, p2.y);
