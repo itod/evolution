@@ -15,7 +15,6 @@
 #define CHILD_COUNT 8
 
 #define DEFAULT_EXTENT 200.0
-#define MARGIN 0.0
 
 @implementation EvolutionRenderer
 
@@ -104,7 +103,7 @@
                 CGContextSaveGState(ctx); {
                     TDAssert(idx < [_children count]);
                     Morph *m = _children[idx++];
-                    [m renderInContext:ctx rect:CGRectMake(round(DEFAULT_EXTENT*row + MARGIN*0.5), round(DEFAULT_EXTENT*col - MARGIN*0.5), DEFAULT_EXTENT - MARGIN, DEFAULT_EXTENT - MARGIN)];
+                    [m renderInContext:ctx rect:CGRectMake(round(DEFAULT_EXTENT*row), round(DEFAULT_EXTENT*col), DEFAULT_EXTENT, DEFAULT_EXTENT)];
                 } CGContextRestoreGState(ctx);
 
             }
@@ -145,7 +144,7 @@
     NSInteger idx = lrint(col*3.0 + row);
     TDAssert(idx < [_children count]);
 
-    NSLog(@"%@,%@ : %@", @(row), @(col), @(idx));
+    //NSLog(@"%@,%@ : %@", @(row), @(col), @(idx));
 
     Morph *m = [[_children[idx] retain] autorelease];
 
