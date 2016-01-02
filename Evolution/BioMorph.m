@@ -83,7 +83,7 @@ static NSInteger EVORandom(low, high) {
 
 - (void)renderInContext:(CGContextRef)ctx rect:(CGRect)r {
     TDAssertMainThread();
-    CGPoint p = CGPointMake(NSMidX(r), NSMidY(r));
+    CGPoint p = CGPointMake(CGRectGetMidX(r), CGRectGetMidY(r));
     [self tree:ctx location:p depth:[self.genes[GENE_MAX_INDEX] integerValue] geneIndex:2];
 }
 

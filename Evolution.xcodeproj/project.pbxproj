@@ -14,6 +14,19 @@
 		D32626A21C34946D00E8AD9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D32626A11C34946D00E8AD9C /* Assets.xcassets */; };
 		D32626A51C34946D00E8AD9C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D32626A31C34946D00E8AD9C /* MainMenu.xib */; };
 		D356F3431C34A18900B6EDAC /* BioMorph.m in Sources */ = {isa = PBXBuildFile; fileRef = D356F3421C34A18900B6EDAC /* BioMorph.m */; };
+		D356F3501C375B3600B6EDAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D356F34F1C375B3600B6EDAC /* main.m */; };
+		D356F3531C375B3600B6EDAC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D356F3521C375B3600B6EDAC /* AppDelegate.m */; };
+		D356F3561C375B3600B6EDAC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D356F3551C375B3600B6EDAC /* ViewController.m */; };
+		D356F3591C375B3600B6EDAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D356F3571C375B3600B6EDAC /* Main.storyboard */; };
+		D356F35B1C375B3600B6EDAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D356F35A1C375B3600B6EDAC /* Assets.xcassets */; };
+		D356F35E1C375B3600B6EDAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D356F35C1C375B3600B6EDAC /* LaunchScreen.storyboard */; };
+		D356F3651C375BCD00B6EDAC /* EvolutionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D356F3641C375BCD00B6EDAC /* EvolutionView.m */; };
+		D356F3661C375C0900B6EDAC /* EvolutionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C8F28C1C34958E00247BE3 /* EvolutionRenderer.m */; };
+		D356F3671C375C0900B6EDAC /* Morph.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C8F28E1C34958E00247BE3 /* Morph.m */; };
+		D356F3681C375C0900B6EDAC /* BioMorph.m in Sources */ = {isa = PBXBuildFile; fileRef = D356F3421C34A18900B6EDAC /* BioMorph.m */; };
+		D356F3691C375C0900B6EDAC /* ConchoMorph.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C8F28A1C34958E00247BE3 /* ConchoMorph.m */; };
+		D356F3711C37600D00B6EDAC /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = D356F36F1C37600D00B6EDAC /* Utils.m */; };
+		D356F3721C37600D00B6EDAC /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = D356F36F1C37600D00B6EDAC /* Utils.m */; };
 		D3C8F2871C34958400247BE3 /* EvolutionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C8F2861C34958400247BE3 /* EvolutionView.m */; };
 		D3C8F2901C34958E00247BE3 /* ConchoMorph.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C8F28A1C34958E00247BE3 /* ConchoMorph.m */; };
 		D3C8F2911C34958E00247BE3 /* EvolutionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C8F28C1C34958E00247BE3 /* EvolutionRenderer.m */; };
@@ -33,6 +46,21 @@
 		D32626A61C34946D00E8AD9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Mac/Info.plist; sourceTree = SOURCE_ROOT; };
 		D356F3411C34A18900B6EDAC /* BioMorph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BioMorph.h; sourceTree = "<group>"; };
 		D356F3421C34A18900B6EDAC /* BioMorph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BioMorph.m; sourceTree = "<group>"; };
+		D356F34C1C375B3600B6EDAC /* Evolution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Evolution.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D356F34F1C375B3600B6EDAC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D356F3511C375B3600B6EDAC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D356F3521C375B3600B6EDAC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D356F3541C375B3600B6EDAC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D356F3551C375B3600B6EDAC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D356F3581C375B3600B6EDAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D356F35A1C375B3600B6EDAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D356F35D1C375B3600B6EDAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D356F35F1C375B3600B6EDAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D356F3631C375BCD00B6EDAC /* EvolutionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvolutionView.h; sourceTree = "<group>"; };
+		D356F3641C375BCD00B6EDAC /* EvolutionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvolutionView.m; sourceTree = "<group>"; };
+		D356F36A1C375D4800B6EDAC /* EvolutionMobile-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EvolutionMobile-Prefix.pch"; sourceTree = "<group>"; };
+		D356F36F1C37600D00B6EDAC /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		D356F3701C37600D00B6EDAC /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		D3C8F2851C34958400247BE3 /* EvolutionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EvolutionView.h; path = Mac/EvolutionView.h; sourceTree = SOURCE_ROOT; };
 		D3C8F2861C34958400247BE3 /* EvolutionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EvolutionView.m; path = Mac/EvolutionView.m; sourceTree = SOURCE_ROOT; };
 		D3C8F2891C34958E00247BE3 /* ConchoMorph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConchoMorph.h; sourceTree = "<group>"; };
@@ -53,6 +81,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D356F3491C375B3600B6EDAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -61,6 +96,7 @@
 			children = (
 				D3C8F2881C34958E00247BE3 /* Evolution */,
 				D32626941C34946D00E8AD9C /* Mac */,
+				D356F34D1C375B3600B6EDAC /* Mobile */,
 				D32626931C34946D00E8AD9C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -69,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				D32626921C34946D00E8AD9C /* Evolution.app */,
+				D356F34C1C375B3600B6EDAC /* Evolution.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,6 +113,7 @@
 		D32626941C34946D00E8AD9C /* Mac */ = {
 			isa = PBXGroup;
 			children = (
+				D32626A31C34946D00E8AD9C /* MainMenu.xib */,
 				D32626951C34946D00E8AD9C /* AppDelegate.h */,
 				D32626961C34946D00E8AD9C /* AppDelegate.m */,
 				D326269B1C34946D00E8AD9C /* Document.h */,
@@ -83,7 +121,6 @@
 				D326269E1C34946D00E8AD9C /* Document.xib */,
 				D3C8F2851C34958400247BE3 /* EvolutionView.h */,
 				D3C8F2861C34958400247BE3 /* EvolutionView.m */,
-				D32626A31C34946D00E8AD9C /* MainMenu.xib */,
 				D32626981C34946D00E8AD9C /* Supporting Files */,
 			);
 			name = Mac;
@@ -101,6 +138,34 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D356F34D1C375B3600B6EDAC /* Mobile */ = {
+			isa = PBXGroup;
+			children = (
+				D356F3571C375B3600B6EDAC /* Main.storyboard */,
+				D356F3511C375B3600B6EDAC /* AppDelegate.h */,
+				D356F3521C375B3600B6EDAC /* AppDelegate.m */,
+				D356F3541C375B3600B6EDAC /* ViewController.h */,
+				D356F3551C375B3600B6EDAC /* ViewController.m */,
+				D356F3631C375BCD00B6EDAC /* EvolutionView.h */,
+				D356F3641C375BCD00B6EDAC /* EvolutionView.m */,
+				D356F35A1C375B3600B6EDAC /* Assets.xcassets */,
+				D356F35C1C375B3600B6EDAC /* LaunchScreen.storyboard */,
+				D356F35F1C375B3600B6EDAC /* Info.plist */,
+				D356F34E1C375B3600B6EDAC /* Supporting Files */,
+			);
+			name = Mobile;
+			path = EvolutionMobile;
+			sourceTree = "<group>";
+		};
+		D356F34E1C375B3600B6EDAC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D356F36A1C375D4800B6EDAC /* EvolutionMobile-Prefix.pch */,
+				D356F34F1C375B3600B6EDAC /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		D3C8F2881C34958E00247BE3 /* Evolution */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +178,8 @@
 				D356F3421C34A18900B6EDAC /* BioMorph.m */,
 				D3C8F2891C34958E00247BE3 /* ConchoMorph.h */,
 				D3C8F28A1C34958E00247BE3 /* ConchoMorph.m */,
+				D356F3701C37600D00B6EDAC /* Utils.h */,
+				D356F36F1C37600D00B6EDAC /* Utils.m */,
 			);
 			path = Evolution;
 			sourceTree = "<group>";
@@ -137,6 +204,23 @@
 			productReference = D32626921C34946D00E8AD9C /* Evolution.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D356F34B1C375B3600B6EDAC /* EvolutionMobile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D356F3601C375B3600B6EDAC /* Build configuration list for PBXNativeTarget "EvolutionMobile" */;
+			buildPhases = (
+				D356F3481C375B3600B6EDAC /* Sources */,
+				D356F3491C375B3600B6EDAC /* Frameworks */,
+				D356F34A1C375B3600B6EDAC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EvolutionMobile;
+			productName = EvolutionMobile;
+			productReference = D356F34C1C375B3600B6EDAC /* Evolution.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -147,6 +231,9 @@
 				ORGANIZATIONNAME = "Todd Ditchendorf";
 				TargetAttributes = {
 					D32626911C34946D00E8AD9C = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					D356F34B1C375B3600B6EDAC = {
 						CreatedOnToolsVersion = 7.2;
 					};
 				};
@@ -165,6 +252,7 @@
 			projectRoot = "";
 			targets = (
 				D32626911C34946D00E8AD9C /* EvolutionMac */,
+				D356F34B1C375B3600B6EDAC /* EvolutionMobile */,
 			);
 		};
 /* End PBXProject section */
@@ -177,6 +265,16 @@
 				D32626A21C34946D00E8AD9C /* Assets.xcassets in Resources */,
 				D32626A01C34946D00E8AD9C /* Document.xib in Resources */,
 				D32626A51C34946D00E8AD9C /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D356F34A1C375B3600B6EDAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D356F35E1C375B3600B6EDAC /* LaunchScreen.storyboard in Resources */,
+				D356F35B1C375B3600B6EDAC /* Assets.xcassets in Resources */,
+				D356F3591C375B3600B6EDAC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,8 +291,25 @@
 				D3C8F2921C34958E00247BE3 /* Morph.m in Sources */,
 				D326269A1C34946D00E8AD9C /* main.m in Sources */,
 				D356F3431C34A18900B6EDAC /* BioMorph.m in Sources */,
+				D356F3711C37600D00B6EDAC /* Utils.m in Sources */,
 				D3C8F2871C34958400247BE3 /* EvolutionView.m in Sources */,
 				D32626971C34946D00E8AD9C /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D356F3481C375B3600B6EDAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D356F3691C375C0900B6EDAC /* ConchoMorph.m in Sources */,
+				D356F3671C375C0900B6EDAC /* Morph.m in Sources */,
+				D356F3561C375B3600B6EDAC /* ViewController.m in Sources */,
+				D356F3531C375B3600B6EDAC /* AppDelegate.m in Sources */,
+				D356F3681C375C0900B6EDAC /* BioMorph.m in Sources */,
+				D356F3661C375C0900B6EDAC /* EvolutionRenderer.m in Sources */,
+				D356F3721C37600D00B6EDAC /* Utils.m in Sources */,
+				D356F3651C375BCD00B6EDAC /* EvolutionView.m in Sources */,
+				D356F3501C375B3600B6EDAC /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +333,22 @@
 			name = MainMenu.xib;
 			path = Mac;
 			sourceTree = SOURCE_ROOT;
+		};
+		D356F3571C375B3600B6EDAC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D356F3581C375B3600B6EDAC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D356F35C1C375B3600B6EDAC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D356F35D1C375B3600B6EDAC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
@@ -247,7 +378,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREFIX_HEADER = "Mac/EvolutionMac-Prefix.pch";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -288,7 +419,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Mac/EvolutionMac-Prefix.pch";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -306,6 +437,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PREFIX_HEADER = "Mac/EvolutionMac-Prefix.pch";
 				INFOPLIST_FILE = Mac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.celestialteapot.Evolution;
@@ -318,10 +450,44 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PREFIX_HEADER = "Mac/EvolutionMac-Prefix.pch";
 				INFOPLIST_FILE = Mac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.celestialteapot.Evolution;
 				PRODUCT_NAME = Evolution;
+			};
+			name = Release;
+		};
+		D356F3611C375B3600B6EDAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREFIX_HEADER = "EvolutionMobile/EvolutionMobile-Prefix.pch";
+				INFOPLIST_FILE = EvolutionMobile/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.celestialteapot.EvolutionMobile;
+				PRODUCT_NAME = Evolution;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D356F3621C375B3600B6EDAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREFIX_HEADER = "EvolutionMobile/EvolutionMobile-Prefix.pch";
+				INFOPLIST_FILE = EvolutionMobile/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.celestialteapot.EvolutionMobile;
+				PRODUCT_NAME = Evolution;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -342,6 +508,15 @@
 			buildConfigurations = (
 				D32626C01C34946D00E8AD9C /* Debug */,
 				D32626C11C34946D00E8AD9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D356F3601C375B3600B6EDAC /* Build configuration list for PBXNativeTarget "EvolutionMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D356F3611C375B3600B6EDAC /* Debug */,
+				D356F3621C375B3600B6EDAC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -6,6 +6,8 @@
 //  Copyright © 2015 Todd Ditchendorf. All rights reserved.
 //
 
+#define MOBILE 1
+
 #if UNIT_TEST
 #define TDAssertMainThread() do {} while(0)
 #define TDAssertNotMainThread() do {} while(0)

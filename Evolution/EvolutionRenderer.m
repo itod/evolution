@@ -36,29 +36,32 @@
 
 
 - (void)awakeFromNib {
-    TDAssertMainThread();
     [super awakeFromNib];
     
-    self.generation = -1;
-
-    Morph *m = [[[BioMorph alloc] init] autorelease];
-    [self reproduce:m];
+    TDPerformOnMainThreadAfterDelay(0.0, ^{
+        TDAssertMainThread();
+        TDAssert(_delegate);
+        
+        self.generation = -1;
+        
+        Morph *m = [[[BioMorph alloc] init] autorelease];
+        [self reproduce:m];
+    });
 }
 
 
 #pragma mark -
 #pragma mark Public
 
-- (void)renderInView:(id)v dirtyRect:(CGRect)drect {
+- (void)render:(CGContextRef)ctx inView:(id)v dirtyRect:(CGRect)drect {
     TDAssertMainThread();
     TDAssert(v);
     
     CGRect bounds = [v bounds];
     
-    CGFloat w = round(NSWidth(bounds) / NUM_ROWS);
-    CGFloat h = round(NSHeight(bounds) / NUM_COLS);
+    CGFloat w = round(CGRectGetWidth(bounds) / NUM_ROWS);
+    CGFloat h = round(CGRectGetHeight(bounds) / NUM_COLS);
     
-    CGContextRef ctx = [[NSGraphicsContext currentContext] graphicsPort];
     CGContextSetRGBStrokeColor(ctx, 0.0, 0.0, 0.0, 1.0);
     
     CGContextSetLineWidth(ctx, 4.0);
@@ -71,8 +74,8 @@
         CGFloat x = 0.0;
         for (NSInteger i = 0; i < NUM_ROWS-1; ++i) {
             x = round(x + w);
-            CGContextMoveToPoint(ctx, x, round(NSMinY(bounds)));
-            CGContextAddLineToPoint(ctx, x, round(NSMaxY(bounds)));
+            CGContextMoveToPoint(ctx, x, round(CGRectGetMinY(bounds)));
+            CGContextAddLineToPoint(ctx, x, round(CGRectGetMaxY(bounds)));
             CGContextStrokePath(ctx);
         }
     }
@@ -82,8 +85,8 @@
         CGFloat y = 0.0;
         for (NSInteger i = 0; i < NUM_COLS-1; ++i) {
             y = round(y + h);
-            CGContextMoveToPoint(ctx, round(NSMinX(bounds)), y);
-            CGContextAddLineToPoint(ctx, round(NSMaxX(bounds)), y);
+            CGContextMoveToPoint(ctx, round(CGRectGetMinX(bounds)), y);
+            CGContextAddLineToPoint(ctx, round(CGRectGetMaxX(bounds)), y);
             CGContextStrokePath(ctx);
         }
     }
@@ -130,8 +133,8 @@
     {
         CGRect bounds = [v bounds];
         
-        CGFloat w = round(NSWidth(bounds) / NUM_ROWS);
-        CGFloat h = round(NSHeight(bounds) / NUM_COLS);
+        CGFloat w = round(CGRectGetWidth(bounds) / NUM_ROWS);
+        CGFloat h = round(CGRectGetHeight(bounds) / NUM_COLS);
         
         CGFloat x = 0.0;
         for (NSInteger i = 0; i < NUM_ROWS; ++i) {

@@ -6,8 +6,6 @@
 //  Copyright © 2015 Todd Ditchendorf. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
-
 @class Morph;
 @class EvolutionRenderer;
 
@@ -18,7 +16,7 @@
 
 @interface EvolutionRenderer : NSObject
 
-- (void)renderInView:(id)v dirtyRect:(CGRect)drect;
+- (void)render:(CGContextRef)ctx inView:(id)v dirtyRect:(CGRect)drect;
 - (void)hitTest:(CGPoint)p inView:(id)v;
 
 - (void)reproduce:(Morph *)m;

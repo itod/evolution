@@ -2,8 +2,8 @@
 //  EvolutionView.m
 //  Evolution
 //
-//  Created by Todd Ditchendorf on 12/30/15.
-//  Copyright © 2015 Todd Ditchendorf. All rights reserved.
+//  Created by Todd Ditchendorf on 1/1/16.
+//  Copyright © 2016 Todd Ditchendorf. All rights reserved.
 //
 
 #import "EvolutionView.h"
@@ -29,8 +29,8 @@
     TDAssertMainThread();
     TDAssert(_renderer);
     
-    CGContextRef ctx = [[NSGraphicsContext currentContext] graphicsPort];
-
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    
     [_renderer render:ctx inView:self dirtyRect:dirtyRect];
 }
 
@@ -38,11 +38,11 @@
 #pragma mark -
 #pragma mark NSResponder
 
-- (void)mouseDown:(NSEvent *)evt {
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)evt {
     TDAssertMainThread();
     TDAssert(_renderer);
     
-    CGPoint p = [self convertPoint:[evt locationInWindow] fromView:nil];
+    CGPoint p = [[touches anyObject] locationInView:self];
     [_renderer hitTest:p inView:self];
 }
 
@@ -53,13 +53,13 @@
 - (void)rendererDidReproduce:(EvolutionRenderer *)r {
     TDAssertMainThread();
     
-    [self setNeedsDisplay:YES];
+    [self setNeedsDisplay];
 }
 
 
 - (id)undoManagerForRenderer:(EvolutionRenderer *)r {
     TDAssertMainThread();
-
+    
     return [self undoManager];
 }
 
