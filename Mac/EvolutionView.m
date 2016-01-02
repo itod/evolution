@@ -50,6 +50,8 @@
 
 
 - (NSUndoManager *)undoManagerForRenderer:(EvolutionRenderer *)r {
+    TDAssertMainThread();
+
     return [self undoManager];
 }
 
