@@ -174,10 +174,11 @@
 
 
 #pragma mark -
-#pragma mark Properties
+#pragma mark Private
 
 - (void)setChildren:(NSArray *)newChildren forGeneration:(NSInteger)newGen {
     TDAssertMainThread();
+    TDAssert(_delegate);
     
     if (_children) {
         NSUndoManager *mgr = [_delegate undoManagerForRenderer:self];
