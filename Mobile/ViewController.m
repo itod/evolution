@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "EvolutionRenderer.h"
 
 @interface ViewController ()
 
@@ -14,18 +15,37 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+- (void)dealloc {
+    self.renderer = nil;
+    [super dealloc];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 - (BOOL)prefersStatusBarHidden {
     return YES;
 }
 
+
+- (IBAction)reset:(id)sender {
+    TDAssertMainThread();
+    
+
+    UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Really Reset?", @"")
+                                                     message:nil
+                                                    delegate:self
+                                           cancelButtonTitle:NSLocalizedString(@"Cancel", @"")
+                                           otherButtonTitles:NSLocalizedString(@"Reset", @""), nil] autorelease];
+    [alert show];
+}
+
+
+#pragma mark -
+#pragma mark UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)av clickedButtonAtIndex:(NSInteger)idx {
+    if (1 == idx) {
+        TDAssert(_renderer);
+        [_renderer reset];
+    }
+}
 @end

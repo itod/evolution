@@ -16,6 +16,7 @@
 
 @interface EvolutionRenderer : NSObject
 
+- (void)reset;
 - (void)render:(CGContextRef)ctx inView:(id)v dirtyRect:(CGRect)drect;
 - (void)hitTest:(CGPoint)p inView:(id)v;
 

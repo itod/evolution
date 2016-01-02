@@ -7,9 +7,9 @@
 //
 
 #if MOBILE
-@import UIKit;
+#import <UIKit/UIKit.h>
 #else
-@import AppKit;
+#import <AppKit/AppKit.h>
 #endif
 
 void TDPerformOnMainThread(void (^block)(void));

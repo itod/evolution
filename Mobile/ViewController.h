@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@class EvolutionRenderer;
 
+@interface ViewController : UIViewController <UIAlertViewDelegate>
 
+- (IBAction)reset:(id)sender;
+
+@property (nonatomic, assign) IBOutlet EvolutionRenderer *renderer;
 @end
 

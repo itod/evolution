@@ -39,19 +39,24 @@
     [super awakeFromNib];
     
     TDPerformOnMainThreadAfterDelay(0.0, ^{
-        TDAssertMainThread();
-        TDAssert(_delegate);
-        
-        self.generation = -1;
-        
-        Morph *m = [[[BioMorph alloc] init] autorelease];
-        [self reproduce:m];
+        [self reset];
     });
 }
 
 
 #pragma mark -
 #pragma mark Public
+
+- (void)reset {
+    TDAssertMainThread();
+    TDAssert(_delegate);
+    
+    self.generation = -1;
+    
+    Morph *m = [[[BioMorph alloc] init] autorelease];
+    [self reproduce:m];
+}
+
 
 - (void)render:(CGContextRef)ctx inView:(id)v dirtyRect:(CGRect)drect {
     TDAssertMainThread();
