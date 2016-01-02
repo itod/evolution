@@ -22,7 +22,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        
+
     }
     return self;
 }
@@ -36,8 +36,11 @@
 
 
 - (void)awakeFromNib {
+    TDAssertMainThread();
     [super awakeFromNib];
     
+    self.generation = -1;
+
     Morph *m = [[[BioMorph alloc] init] autorelease];
     [self reproduce:m];
 }
@@ -161,13 +164,32 @@
     TDAssertMainThread();
     TDAssert(m);
     
-    self.children = [m reproduce:CHILD_COUNT];
+    [self setChildren:[m reproduce:CHILD_COUNT] forGeneration:_generation+1];
+
     TDAssert([_children count] == CHILD_COUNT+1);
     TDAssert([_children count] == NUM_ROWS*NUM_COLS);
     
     TDAssert(m == _children[4]);
+}
+
+
+#pragma mark -
+#pragma mark Properties
+
+- (void)setChildren:(NSArray *)newChildren forGeneration:(NSInteger)newGen {
+    TDAssertMainThread();
     
-    TDAssert(_delegate);
+    if (_children) {
+        NSUndoManager *mgr = [_delegate undoManagerForRenderer:self];
+        TDAssert(mgr);
+        [[mgr prepareWithInvocationTarget:self] setChildren:_children forGeneration:_generation];
+    }
+
+    [_children autorelease];
+    _children = [newChildren copy];
+    
+    self.generation = newGen;
+
     [_delegate rendererDidReproduce:self];
 }
 

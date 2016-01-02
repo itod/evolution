@@ -22,17 +22,43 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <customView id="jD2-TF-7XL" customClass="EvolutionView">
-                        <rect key="frame" x="0.0" y="0.0" width="507" height="413"/>
+                        <rect key="frame" x="0.0" y="0.0" width="507" height="386"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <connections>
                             <outlet property="renderer" destination="3Vt-TC-nWy" id="y0l-MW-7Tv"/>
                         </connections>
                     </customView>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="xCa-90-bnY">
+                        <rect key="frame" x="-2" y="392" width="83" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Generation:" id="cL4-Tt-abx">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Hbt-As-qbf">
+                        <rect key="frame" x="81" y="392" width="67" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" id="O3p-ba-pcL">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="3Vt-TC-nWy" name="value" keyPath="generation" id="ZOO-BC-VCv">
+                                <dictionary key="options">
+                                    <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </textField>
                 </subviews>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-x8E"/>
             </connections>
+            <point key="canvasLocation" x="380.5" y="289.5"/>
         </window>
         <customObject id="3Vt-TC-nWy" customClass="EvolutionRenderer">
             <connections>

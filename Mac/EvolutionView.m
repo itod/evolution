@@ -48,4 +48,9 @@
     [self setNeedsDisplay:YES];
 }
 
+
+- (NSUndoManager *)undoManagerForRenderer:(EvolutionRenderer *)r {
+    return [self undoManager];
+}
+
 @end

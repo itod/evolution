@@ -7,10 +7,6 @@
 //
 
 #import "Document.h"
-//#import "EvolutionView.h"
-//#import "EvolutionRenderer.h"
-//
-//#define EVO_VIEW_TAG 47
 
 @interface Document ()
 
@@ -26,17 +22,28 @@
     return self;
 }
 
+
+- (void)dealloc {
+    
+    [super dealloc];
+}
+
+
+#pragma mark -
+#pragma mark NSDocument
+
 - (void)windowControllerDidLoadNib:(NSWindowController *)wc {
     [super windowControllerDidLoadNib:wc];
-
-//    EvolutionView *v = [[[wc window] contentView] viewWithTag:EVO_VIEW_TAG];
-//    EvolutionRenderer *r = v.renderer;
-//    [r reproduce:m];
 }
+
+
+#pragma mark -
+#pragma mark Open/Save
 
 + (BOOL)autosavesInPlace {
     return YES;
 }
+
 
 - (NSString *)windowNibName {
     // Override returning the nib file name of the document
@@ -44,12 +51,14 @@
     return @"Document";
 }
 
+
 - (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError {
     // Insert code here to write your document to data of the specified type. If outError != NULL, ensure that you create and set an appropriate error when returning nil.
     // You can also choose to override -fileWrapperOfType:error:, -writeToURL:ofType:error:, or -writeToURL:ofType:forSaveOperation:originalContentsURL:error: instead.
     [NSException raise:@"UnimplementedMethod" format:@"%@ is unimplemented", NSStringFromSelector(_cmd)];
     return nil;
 }
+
 
 - (BOOL)readFromData:(NSData *)data ofType:(NSString *)typeName error:(NSError **)outError {
     // Insert code here to read your document from the given data of the specified type. If outError != NULL, ensure that you create and set an appropriate error when returning NO.

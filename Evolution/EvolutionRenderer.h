@@ -13,6 +13,7 @@
 
 @protocol EvolutionRendererDelegate <NSObject>
 - (void)rendererDidReproduce:(EvolutionRenderer *)r;
+- (NSUndoManager *)undoManagerForRenderer:(EvolutionRenderer *)r;
 @end
 
 @interface EvolutionRenderer : NSObject
@@ -24,5 +25,6 @@
 
 @property (nonatomic, assign) IBOutlet id <EvolutionRendererDelegate>delegate;
 
-@property (nonatomic, retain) NSArray *children;
+@property (nonatomic, copy) NSArray *children;
+@property (nonatomic, assign) NSInteger generation;
 @end
