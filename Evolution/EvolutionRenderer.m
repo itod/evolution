@@ -162,7 +162,7 @@
 
     //NSLog(@"%@,%@ : %@", @(row), @(col), @(idx));
 
-    Morph *m = [[_children[idx] retain] autorelease];
+    Morph *m = _children[idx];
 
     [self reproduce:m];
 }
