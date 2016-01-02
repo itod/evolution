@@ -28,7 +28,6 @@
 
 - (IBAction)reset:(id)sender {
     TDAssertMainThread();
-    
 
     UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Really Reset?", @"")
                                                      message:nil
