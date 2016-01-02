@@ -15,4 +15,5 @@
 @interface EvolutionView : UIView <EvolutionRendererDelegate>
 
 @property (nonatomic, assign) IBOutlet EvolutionRenderer *renderer;
+@property (nonatomic, assign) IBOutlet UILabel *genCountLabel;
 @end

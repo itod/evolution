@@ -13,6 +13,7 @@
 
 - (void)dealloc {
     self.renderer = nil;
+    self.genCountLabel = nil;
     [super dealloc];
 }
 
@@ -41,9 +42,15 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)evt {
     TDAssertMainThread();
     TDAssert(_renderer);
+    TDAssert(_genCountLabel);
     
     CGPoint p = [[touches anyObject] locationInView:self];
     [_renderer hitTest:p inView:self];
+    
+    TDPerformOnMainThreadAfterDelay(0.0, ^{
+        NSInteger c = _renderer.generation;
+        [_genCountLabel setText:[NSString stringWithFormat:@"%@", @(c)]];
+    });
 }
 
 
