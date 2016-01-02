@@ -13,31 +13,12 @@
 		D32626A01C34946D00E8AD9C /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = D326269E1C34946D00E8AD9C /* Document.xib */; };
 		D32626A21C34946D00E8AD9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D32626A11C34946D00E8AD9C /* Assets.xcassets */; };
 		D32626A51C34946D00E8AD9C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D32626A31C34946D00E8AD9C /* MainMenu.xib */; };
-		D32626B01C34946D00E8AD9C /* EvolutionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D32626AF1C34946D00E8AD9C /* EvolutionTests.m */; };
-		D32626BB1C34946D00E8AD9C /* EvolutionUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D32626BA1C34946D00E8AD9C /* EvolutionUITests.m */; };
 		D356F3431C34A18900B6EDAC /* BioMorph.m in Sources */ = {isa = PBXBuildFile; fileRef = D356F3421C34A18900B6EDAC /* BioMorph.m */; };
 		D3C8F2871C34958400247BE3 /* EvolutionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C8F2861C34958400247BE3 /* EvolutionView.m */; };
 		D3C8F2901C34958E00247BE3 /* ConchoMorph.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C8F28A1C34958E00247BE3 /* ConchoMorph.m */; };
 		D3C8F2911C34958E00247BE3 /* EvolutionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C8F28C1C34958E00247BE3 /* EvolutionRenderer.m */; };
 		D3C8F2921C34958E00247BE3 /* Morph.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C8F28E1C34958E00247BE3 /* Morph.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		D32626AC1C34946D00E8AD9C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D326268A1C34946D00E8AD9C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D32626911C34946D00E8AD9C;
-			remoteInfo = Evolution;
-		};
-		D32626B71C34946D00E8AD9C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D326268A1C34946D00E8AD9C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D32626911C34946D00E8AD9C;
-			remoteInfo = Evolution;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D32626921C34946D00E8AD9C /* Evolution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Evolution.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,12 +31,6 @@
 		D32626A11C34946D00E8AD9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Mac/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		D32626A41C34946D00E8AD9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		D32626A61C34946D00E8AD9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Mac/Info.plist; sourceTree = SOURCE_ROOT; };
-		D32626AB1C34946D00E8AD9C /* EvolutionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EvolutionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D32626AF1C34946D00E8AD9C /* EvolutionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EvolutionTests.m; sourceTree = "<group>"; };
-		D32626B11C34946D00E8AD9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D32626B61C34946D00E8AD9C /* EvolutionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EvolutionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D32626BA1C34946D00E8AD9C /* EvolutionUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EvolutionUITests.m; sourceTree = "<group>"; };
-		D32626BC1C34946D00E8AD9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D356F3411C34A18900B6EDAC /* BioMorph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BioMorph.h; sourceTree = "<group>"; };
 		D356F3421C34A18900B6EDAC /* BioMorph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BioMorph.m; sourceTree = "<group>"; };
 		D3C8F2851C34958400247BE3 /* EvolutionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EvolutionView.h; path = Mac/EvolutionView.h; sourceTree = SOURCE_ROOT; };
@@ -78,20 +53,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D32626A81C34946D00E8AD9C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D32626B31C34946D00E8AD9C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -100,8 +61,6 @@
 			children = (
 				D3C8F2881C34958E00247BE3 /* Evolution */,
 				D32626941C34946D00E8AD9C /* Mac */,
-				D32626AE1C34946D00E8AD9C /* EvolutionTests */,
-				D32626B91C34946D00E8AD9C /* EvolutionUITests */,
 				D32626931C34946D00E8AD9C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -110,8 +69,6 @@
 			isa = PBXGroup;
 			children = (
 				D32626921C34946D00E8AD9C /* Evolution.app */,
-				D32626AB1C34946D00E8AD9C /* EvolutionTests.xctest */,
-				D32626B61C34946D00E8AD9C /* EvolutionUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -144,24 +101,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D32626AE1C34946D00E8AD9C /* EvolutionTests */ = {
-			isa = PBXGroup;
-			children = (
-				D32626AF1C34946D00E8AD9C /* EvolutionTests.m */,
-				D32626B11C34946D00E8AD9C /* Info.plist */,
-			);
-			path = EvolutionTests;
-			sourceTree = "<group>";
-		};
-		D32626B91C34946D00E8AD9C /* EvolutionUITests */ = {
-			isa = PBXGroup;
-			children = (
-				D32626BA1C34946D00E8AD9C /* EvolutionUITests.m */,
-				D32626BC1C34946D00E8AD9C /* Info.plist */,
-			);
-			path = EvolutionUITests;
-			sourceTree = "<group>";
-		};
 		D3C8F2881C34958E00247BE3 /* Evolution */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,9 +120,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D32626911C34946D00E8AD9C /* Evolution */ = {
+		D32626911C34946D00E8AD9C /* EvolutionMac */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D32626BF1C34946D00E8AD9C /* Build configuration list for PBXNativeTarget "Evolution" */;
+			buildConfigurationList = D32626BF1C34946D00E8AD9C /* Build configuration list for PBXNativeTarget "EvolutionMac" */;
 			buildPhases = (
 				D326268E1C34946D00E8AD9C /* Sources */,
 				D326268F1C34946D00E8AD9C /* Frameworks */,
@@ -193,46 +132,10 @@
 			);
 			dependencies = (
 			);
-			name = Evolution;
+			name = EvolutionMac;
 			productName = Evolution;
 			productReference = D32626921C34946D00E8AD9C /* Evolution.app */;
 			productType = "com.apple.product-type.application";
-		};
-		D32626AA1C34946D00E8AD9C /* EvolutionTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D32626C21C34946D00E8AD9C /* Build configuration list for PBXNativeTarget "EvolutionTests" */;
-			buildPhases = (
-				D32626A71C34946D00E8AD9C /* Sources */,
-				D32626A81C34946D00E8AD9C /* Frameworks */,
-				D32626A91C34946D00E8AD9C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D32626AD1C34946D00E8AD9C /* PBXTargetDependency */,
-			);
-			name = EvolutionTests;
-			productName = EvolutionTests;
-			productReference = D32626AB1C34946D00E8AD9C /* EvolutionTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		D32626B51C34946D00E8AD9C /* EvolutionUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D32626C51C34946D00E8AD9C /* Build configuration list for PBXNativeTarget "EvolutionUITests" */;
-			buildPhases = (
-				D32626B21C34946D00E8AD9C /* Sources */,
-				D32626B31C34946D00E8AD9C /* Frameworks */,
-				D32626B41C34946D00E8AD9C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D32626B81C34946D00E8AD9C /* PBXTargetDependency */,
-			);
-			name = EvolutionUITests;
-			productName = EvolutionUITests;
-			productReference = D32626B61C34946D00E8AD9C /* EvolutionUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -245,14 +148,6 @@
 				TargetAttributes = {
 					D32626911C34946D00E8AD9C = {
 						CreatedOnToolsVersion = 7.2;
-					};
-					D32626AA1C34946D00E8AD9C = {
-						CreatedOnToolsVersion = 7.2;
-						TestTargetID = D32626911C34946D00E8AD9C;
-					};
-					D32626B51C34946D00E8AD9C = {
-						CreatedOnToolsVersion = 7.2;
-						TestTargetID = D32626911C34946D00E8AD9C;
 					};
 				};
 			};
@@ -269,9 +164,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D32626911C34946D00E8AD9C /* Evolution */,
-				D32626AA1C34946D00E8AD9C /* EvolutionTests */,
-				D32626B51C34946D00E8AD9C /* EvolutionUITests */,
+				D32626911C34946D00E8AD9C /* EvolutionMac */,
 			);
 		};
 /* End PBXProject section */
@@ -284,20 +177,6 @@
 				D32626A21C34946D00E8AD9C /* Assets.xcassets in Resources */,
 				D32626A01C34946D00E8AD9C /* Document.xib in Resources */,
 				D32626A51C34946D00E8AD9C /* MainMenu.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D32626A91C34946D00E8AD9C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D32626B41C34946D00E8AD9C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,36 +198,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D32626A71C34946D00E8AD9C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D32626B01C34946D00E8AD9C /* EvolutionTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D32626B21C34946D00E8AD9C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D32626BB1C34946D00E8AD9C /* EvolutionUITests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		D32626AD1C34946D00E8AD9C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D32626911C34946D00E8AD9C /* Evolution */;
-			targetProxy = D32626AC1C34946D00E8AD9C /* PBXContainerItemProxy */;
-		};
-		D32626B81C34946D00E8AD9C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D32626911C34946D00E8AD9C /* Evolution */;
-			targetProxy = D32626B71C34946D00E8AD9C /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D326269E1C34946D00E8AD9C /* Document.xib */ = {
@@ -459,7 +309,7 @@
 				INFOPLIST_FILE = Mac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.celestialteapot.Evolution;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Evolution;
 			};
 			name = Debug;
 		};
@@ -471,59 +321,7 @@
 				INFOPLIST_FILE = Mac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.celestialteapot.Evolution;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		D32626C31C34946D00E8AD9C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = EvolutionTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.celestialteapot.EvolutionTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Evolution.app/Contents/MacOS/Evolution";
-			};
-			name = Debug;
-		};
-		D32626C41C34946D00E8AD9C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = EvolutionTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.celestialteapot.EvolutionTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Evolution.app/Contents/MacOS/Evolution";
-			};
-			name = Release;
-		};
-		D32626C61C34946D00E8AD9C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = EvolutionUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.celestialteapot.EvolutionUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = Evolution;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		D32626C71C34946D00E8AD9C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = EvolutionUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.celestialteapot.EvolutionUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = Evolution;
-				USES_XCTRUNNER = YES;
+				PRODUCT_NAME = Evolution;
 			};
 			name = Release;
 		};
@@ -539,29 +337,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D32626BF1C34946D00E8AD9C /* Build configuration list for PBXNativeTarget "Evolution" */ = {
+		D32626BF1C34946D00E8AD9C /* Build configuration list for PBXNativeTarget "EvolutionMac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D32626C01C34946D00E8AD9C /* Debug */,
 				D32626C11C34946D00E8AD9C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D32626C21C34946D00E8AD9C /* Build configuration list for PBXNativeTarget "EvolutionTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D32626C31C34946D00E8AD9C /* Debug */,
-				D32626C41C34946D00E8AD9C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D32626C51C34946D00E8AD9C /* Build configuration list for PBXNativeTarget "EvolutionUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D32626C61C34946D00E8AD9C /* Debug */,
-				D32626C71C34946D00E8AD9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
