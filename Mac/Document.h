@@ -8,8 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class EvolutionRenderer;
+
 @interface Document : NSDocument
 
-
+@property (nonatomic, assign) IBOutlet EvolutionRenderer *renderer;
 @end
 

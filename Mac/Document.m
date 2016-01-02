@@ -7,9 +7,11 @@
 //
 
 #import "Document.h"
+#import "EvolutionRenderer.h"
+#import "Morph.h"
 
 @interface Document ()
-
+@property (nonatomic, retain) NSArray *tempMorphs;
 @end
 
 @implementation Document
@@ -24,7 +26,8 @@
 
 
 - (void)dealloc {
-    
+    self.renderer = nil;
+    self.tempMorphs = nil;
     [super dealloc];
 }
 
@@ -34,6 +37,13 @@
 
 - (void)windowControllerDidLoadNib:(NSWindowController *)wc {
     [super windowControllerDidLoadNib:wc];
+    
+    TDAssert(_renderer);
+    
+    if (_tempMorphs) {
+        _renderer.children = _tempMorphs;
+        self.tempMorphs = nil;
+    }
 }
 
 
@@ -46,25 +56,48 @@
 
 
 - (NSString *)windowNibName {
-    // Override returning the nib file name of the document
-    // If you need to use a subclass of NSWindowController or if your document supports multiple NSWindowControllers, you should remove this method and override -makeWindowControllers instead.
     return @"Document";
 }
 
 
-- (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError {
-    // Insert code here to write your document to data of the specified type. If outError != NULL, ensure that you create and set an appropriate error when returning nil.
-    // You can also choose to override -fileWrapperOfType:error:, -writeToURL:ofType:error:, or -writeToURL:ofType:forSaveOperation:originalContentsURL:error: instead.
-    //[NSException raise:@"UnimplementedMethod" format:@"%@ is unimplemented", NSStringFromSelector(_cmd)];
-    return nil;
+- (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outErr {
+    TDAssertMainThread();
+    TDAssert(_renderer);
+
+    NSMutableDictionary *plist = [NSMutableDictionary dictionaryWithCapacity:1];
+    
+    {
+        NSMutableArray *morphPlists = [NSMutableArray arrayWithCapacity:[_renderer.children count]];
+        for (Morph *m in _renderer.children) {
+            id morphPlist = [m asPlist];
+            [morphPlists addObject:morphPlist];
+        }
+        plist[@"morphs"] = morphPlists;
+    }
+    
+    NSData *data = [NSPropertyListSerialization dataWithPropertyList:plist format:NSPropertyListXMLFormat_v1_0 options:NSPropertyListMutableContainers error:outErr];
+    return data;
 }
 
 
-- (BOOL)readFromData:(NSData *)data ofType:(NSString *)typeName error:(NSError **)outError {
-    // Insert code here to read your document from the given data of the specified type. If outError != NULL, ensure that you create and set an appropriate error when returning NO.
-    // You can also choose to override -readFromFileWrapper:ofType:error: or -readFromURL:ofType:error: instead.
-    // If you override either of these, you should also override -isEntireFileLoaded to return NO if the contents are lazily loaded.
-    //[NSException raise:@"UnimplementedMethod" format:@"%@ is unimplemented", NSStringFromSelector(_cmd)];
+- (BOOL)readFromData:(NSData *)data ofType:(NSString *)typeName error:(NSError **)outErr {
+    TDAssertMainThread();
+    TDAssert(data);
+    
+    id plist = [NSPropertyListSerialization propertyListWithData:data options:NSPropertyListMutableContainers format:nil error:outErr];
+    
+    {
+        NSArray *morphPlists = plist[@"morphs"];
+        NSMutableArray *morphs = [NSMutableArray arrayWithCapacity:[morphPlists count]];
+        
+        for (id morphPlist in morphPlists) {
+            Morph *m = [Morph fromPlist:morphPlist];
+            [morphs addObject:m];
+        }
+        
+        self.tempMorphs = morphs;
+    }
+
     return YES;
 }
 

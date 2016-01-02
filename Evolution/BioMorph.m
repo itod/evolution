@@ -44,7 +44,7 @@ static NSInteger EVORandom(low, high) {
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.propertyNames = @[@"", @""];
+        self.propertyNames = @[@"genes"];
         
         self.genes = @[@(1), @(-2), @(3), @(4), @(-5), @(1), @(-2), @(-3), @(8)]; // Bug
 //        self.genes = @[@(-2), @(-6), @(-1), @(2), @(-5), @(-5), @(-1), @(-3), @(7)]; // Antlers

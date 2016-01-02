@@ -11,6 +11,12 @@
 
 @implementation EvolutionView
 
+- (void)dealloc {
+    self.renderer = nil;
+    [super dealloc];
+}
+
+
 #pragma mark -
 #pragma mark NSView
 
