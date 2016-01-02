@@ -32,7 +32,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="308-LB-9Iz">
-                                        <rect key="frame" x="521" y="290" width="39" height="30"/>
+                                        <rect key="frame" x="515" y="290" width="45" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                         <state key="normal" title="Reset"/>
                                         <connections>
