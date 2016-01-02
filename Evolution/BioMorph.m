@@ -81,10 +81,20 @@ static NSInteger EVORandom(low, high) {
 }
 
 
+- (void)renderInContext:(CGContextRef)ctx rect:(CGRect)r {
+    TDAssertMainThread();
+    CGPoint p = CGPointMake(NSMidX(r), NSMidY(r));
+    [self tree:ctx location:p depth:[self.genes[GENE_MAX_INDEX] integerValue] geneIndex:2];
+}
+
+
+#pragma mark -
+#pragma mark Private
+
 - (void)mutateGene {
     NSUInteger geneIndex = 0;
     NSInteger newValue = 0;
-
+    
     do {
         // Ensure a small change the genes
         NSInteger mutationOffset = 0;
@@ -102,16 +112,6 @@ static NSInteger EVORandom(low, high) {
     self.genes = genes;
 }
 
-
-- (void)renderInContext:(CGContextRef)ctx rect:(CGRect)r {
-    TDAssertMainThread();
-    CGPoint p = CGPointMake(NSMidX(r), NSMidY(r));
-    [self tree:ctx location:p depth:[self.genes[GENE_MAX_INDEX] integerValue] geneIndex:2];
-}
-
-
-#pragma mark -
-#pragma mark Private
 
 - (void)tree:(CGContextRef)ctx location:(CGPoint)p1 depth:(NSInteger)depth geneIndex:(NSInteger)geneIdx {
     CGFloat x2 = p1.x + depth * [self.xOffsets[geneIdx] integerValue];
@@ -197,7 +197,7 @@ static NSInteger EVORandom(low, high) {
 - (void)setGenes:(NSArray *)genes {
     if (_genes != genes) {
         [_genes autorelease];
-        _genes = [genes copy];
+        _genes = [genes retain];
         
         self.xOffsets = nil;
         self.yOffsets = nil;

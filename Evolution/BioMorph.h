@@ -10,5 +10,5 @@
 
 @interface BioMorph : Morph
 
-@property (nonatomic, copy) NSArray *genes;
+@property (nonatomic, retain) NSArray *genes;
 @end
