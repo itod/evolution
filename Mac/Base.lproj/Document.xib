@@ -22,27 +22,20 @@
                 <rect key="frame" x="0.0" y="0.0" width="507" height="413"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <customView id="jD2-TF-7XL" customClass="EvolutionView">
-                        <rect key="frame" x="0.0" y="0.0" width="507" height="386"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <connections>
-                            <outlet property="renderer" destination="3Vt-TC-nWy" id="y0l-MW-7Tv"/>
-                        </connections>
-                    </customView>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="xCa-90-bnY">
-                        <rect key="frame" x="-2" y="392" width="83" height="14"/>
+                        <rect key="frame" x="4" y="397" width="23" height="11"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Generation:" id="cL4-Tt-abx">
-                            <font key="font" metaFont="smallSystem"/>
+                        <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Gen" id="cL4-Tt-abx">
+                            <font key="font" metaFont="miniSystem"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Hbt-As-qbf">
-                        <rect key="frame" x="81" y="392" width="67" height="14"/>
+                        <rect key="frame" x="25" y="396" width="39" height="12"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" id="O3p-ba-pcL">
-                            <font key="font" metaFont="smallSystem"/>
+                        <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" id="O3p-ba-pcL">
+                            <font key="font" metaFont="miniSystem"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
@@ -54,6 +47,13 @@
                             </binding>
                         </connections>
                     </textField>
+                    <customView id="jD2-TF-7XL" userLabel="EvolutionView" customClass="EvolutionView">
+                        <rect key="frame" x="0.0" y="0.0" width="507" height="413"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <connections>
+                            <outlet property="renderer" destination="3Vt-TC-nWy" id="y0l-MW-7Tv"/>
+                        </connections>
+                    </customView>
                 </subviews>
             </view>
             <connections>
