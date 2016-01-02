@@ -13,7 +13,7 @@
 
 @protocol EvolutionRendererDelegate <NSObject>
 - (void)rendererDidReproduce:(EvolutionRenderer *)r;
-- (NSUndoManager *)undoManagerForRenderer:(EvolutionRenderer *)r;
+- (id)undoManagerForRenderer:(EvolutionRenderer *)r;
 @end
 
 @interface EvolutionRenderer : NSObject

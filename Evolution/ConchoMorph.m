@@ -20,7 +20,7 @@
 
 
 #pragma mark -
-#pragma mark Genome
+#pragma mark Morph
 
 - (void)renderInContext:(CGContextRef)ctx rect:(CGRect)r {
     

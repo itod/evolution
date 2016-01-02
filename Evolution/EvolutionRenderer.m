@@ -181,7 +181,7 @@
     TDAssert(_delegate);
     
     if (_children) {
-        NSUndoManager *mgr = [_delegate undoManagerForRenderer:self];
+        id mgr = [_delegate undoManagerForRenderer:self];
         TDAssert(mgr);
         [[mgr prepareWithInvocationTarget:self] setChildren:_children forGeneration:_generation];
     }
