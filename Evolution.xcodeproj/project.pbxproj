@@ -141,6 +141,7 @@
 		D356F34D1C375B3600B6EDAC /* Mobile */ = {
 			isa = PBXGroup;
 			children = (
+				D356F35C1C375B3600B6EDAC /* LaunchScreen.storyboard */,
 				D356F3571C375B3600B6EDAC /* Main.storyboard */,
 				D356F3511C375B3600B6EDAC /* AppDelegate.h */,
 				D356F3521C375B3600B6EDAC /* AppDelegate.m */,
@@ -148,9 +149,6 @@
 				D356F3551C375B3600B6EDAC /* ViewController.m */,
 				D356F3631C375BCD00B6EDAC /* EvolutionView.h */,
 				D356F3641C375BCD00B6EDAC /* EvolutionView.m */,
-				D356F35A1C375B3600B6EDAC /* Assets.xcassets */,
-				D356F35C1C375B3600B6EDAC /* LaunchScreen.storyboard */,
-				D356F35F1C375B3600B6EDAC /* Info.plist */,
 				D356F34E1C375B3600B6EDAC /* Supporting Files */,
 			);
 			name = Mobile;
@@ -160,7 +158,9 @@
 		D356F34E1C375B3600B6EDAC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D356F35F1C375B3600B6EDAC /* Info.plist */,
 				D356F36A1C375D4800B6EDAC /* EvolutionMobile-Prefix.pch */,
+				D356F35A1C375B3600B6EDAC /* Assets.xcassets */,
 				D356F34F1C375B3600B6EDAC /* main.m */,
 			);
 			name = "Supporting Files";
